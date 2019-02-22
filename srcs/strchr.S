@@ -1,6 +1,6 @@
 BITS 64
 section .text
-global my_strchr
+global strchr
 ;int    asm_strchr(char *str)
 
 asm_strlen:

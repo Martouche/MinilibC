@@ -1,9 +1,9 @@
 BITS 64
 section .text
-global my_strlen
+global strlen
 ;int    asm_strlen(char *str)
 
-asm_strlen:
+strlen:
     push    rbp
     mov     rbp, rsp
 
