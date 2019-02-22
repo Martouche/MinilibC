@@ -1,37 +1,32 @@
-CC        =         gcc
+NAME=		libasm.so
 
-OBJ        =        srcs/strlen.o            \
-                srcs/strchr.o
+SRC=        srcs/strlen.S  \
+            srcs/strchr.S
 
-EXEC        =        a.out
+ASMFLAGS=   -f elf64
 
-LIB_NAME    =        libasm.so
+LDFLAGS=    -shared
 
-SRC_DIR        =         ./
+ASM=        nasm
 
-PROJECT_DIR    =        ./
+LD=         ld
 
-LIBS_DIR    =        lib/
+RM=         rm -f
 
-HEADERS_DIR    =         include/
+OBJ=        $(SRC:.S=.o)
 
-CFLAGS         =         -Wall -Wextra
+%.o: %.S
+			$(ASM) -o $@ $< $(ASMFLAGS)
 
-all: $(EXEC)
+all:        $(NAME)
 
-$(EXEC):
-		nasm -f elf64 srcs/strlen.S
-		nasm -f elf64 srcs/strchr.S
-		$(CC) -shared -o $(LIB_NAME) $(OBJ) $(CFLAGS)
-		$(CC) -L$(PWD) $(CFLAGS) -g3 -o $(EXEC) srcs/main.c $(SRC_DIR)$(OBJ) -lasm
-#    export LD_LIBRARY_PATH=$(PWD) ; export LD_PRELOAD=$(PWD)/$(LIB_NAME) ;\
-     ./a.out yoo o
+$(NAME):    $(OBJ)
+			$(LD) $(LDFLAGS) -o $(NAME) $(OBJ)
 
 clean:
-	rm -rf $(OBJ)
+			$(RM) $(OBJ)
 
-fclean: clean
-	rm -rf $(EXEC)
-	rm -rf $(LIB_NAME)
+fclean:		clean
+			$(RM) $(NAME)
 
-re: fclean all
+re:		fclean all

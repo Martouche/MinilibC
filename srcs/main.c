@@ -12,7 +12,7 @@ extern int strchr(char *);
 
 int main()
 {
-	printf("%i", strlen("hec"));
+    printf("%i", strlen("hec"));
     printf("%i", strchr("nique zeubi"));
-  return 0;
+    return 0;
 }
