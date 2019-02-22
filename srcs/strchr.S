@@ -3,7 +3,7 @@ section .text
 global strchr
 ;int    asm_strchr(char *str)
 
-asm_strlen:
+strchr:
     push    rbp
     mov     rbp, rsp
 
