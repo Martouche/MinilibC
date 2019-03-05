@@ -1,7 +1,10 @@
 NAME=		libasm.so
 
-SRC=        srcs/strlen.S  \
-            srcs/strchr.S
+SRC=		srcs/strlen.S\
+		srcs/strchr.S\
+		srcs/memset.S\
+		srcs/memcpy.S\
+		srcs/strcmp.S
 
 ASMFLAGS=   -f elf64
 
