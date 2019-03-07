@@ -5,7 +5,10 @@ SRC=		srcs/strlen.S\
 		srcs/memset.S\
 		srcs/memcpy.S\
 		srcs/strcmp.S\
-		srcs/memmove.S
+		srcs/memmove.S\
+		srcs/strncmp.S\
+		srcs/strcasecmp.S\
+		srcs/strstr.S
 
 ASMFLAGS=   -f elf64
 
