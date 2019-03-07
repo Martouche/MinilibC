@@ -4,7 +4,8 @@ SRC=		srcs/strlen.S\
 		srcs/strchr.S\
 		srcs/memset.S\
 		srcs/memcpy.S\
-		srcs/strcmp.S
+		srcs/strcmp.S\
+		srcs/memmove.S
 
 ASMFLAGS=   -f elf64
 
