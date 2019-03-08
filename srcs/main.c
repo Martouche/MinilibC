@@ -7,16 +7,12 @@
 
 #include <stdio.h>
 
-extern void *memset(void* dest, int nByte, size_t count);
-extern int strlen(char *);
-extern char *strchr(char *);
+extern char *strchr(const char *, int);
 
 int main()
 {
-    char str[] = "almost every programmer should know memset!";
-	memset(str,'-',6);
-
-    printf("%i", strlen("hec"));
-    printf("%s", strchr("nique zeubi"));
+    char *str = "PUTTE";
+    int i = 0;
+    printf("%s\n", strchr(str, i));
     return 0;
 }
