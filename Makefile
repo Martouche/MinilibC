@@ -1,6 +1,6 @@
 NAME=		libasm.so
 
-SRC=		srcs/strlen.S\
+SRC=	srcs/strlen.S\
 		srcs/strchr.S\
 		srcs/memset.S\
 		srcs/memcpy.S\
