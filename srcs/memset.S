@@ -17,7 +17,6 @@ loop:
 	je stop
 
 	mov byte[rdi + rcx], sil
-
 	inc rcx
 	jmp loop
 

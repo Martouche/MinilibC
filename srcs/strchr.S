@@ -3,19 +3,24 @@ section .text
 global strchr
 
 strchr:
-    push    rbp
-    mov     rbp, rsp
-    xor     rax, rax
+        mov eax, [esp+4]  ; chaîne s
+        test eax, eax
+        jz .pointeurInvalide
 
-loop:
-    cmp     BYTE [rdi], 0
-    je      success
-    inc     rax
-    inc     rdi
-    jmp     loop
+        mov ecx, [esp+8]  ; char à chercher
 
-success:
-    mov     rax, rdi
-    mov     rsp, rbp
-    pop     rbp
-    ret
+.iteration:
+        movzx edx, byte[eax]
+        cmp edx, ecx
+        je .trouve
+
+        add eax, 1
+
+        test edx, edx
+        jne .iteration
+
+        xor eax, eax
+
+.trouve:
+.pointeurInvalide:
+        ret
