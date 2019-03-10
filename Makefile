@@ -9,6 +9,7 @@ SRC=	srcs/strlen.S\
 		srcs/strncmp.S\
 		srcs/strcasecmp.S\
 		srcs/strstr.S\
+		srcs/rindex.S\
 		srcs/strpbrk.S
 
 ASMFLAGS=   -f elf64
